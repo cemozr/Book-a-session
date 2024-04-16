@@ -10,14 +10,30 @@ import {
   Box,
 } from "@mui/material";
 import { SESSIONS } from "../../dummy-sessions";
+import { Link as RouterLink } from "react-router-dom";
+
+export type SessionType = {
+  id: string;
+  title: string;
+  summary: string;
+  description: string;
+  duration: number;
+  date: string;
+  image: string;
+};
 
 export const BrowseSessionPage = () => {
   return (
     <Container
-      maxWidth={"xl"}
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      maxWidth={"lg"}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginBottom: "2rem",
+      }}
     >
-      <Box width={"83%"}>
+      <Box width={"100%"}>
         <Typography variant="h6" marginTop={2}>
           Available mentoring sessions
         </Typography>
@@ -28,17 +44,17 @@ export const BrowseSessionPage = () => {
       </Box>
       <Grid
         container
-        gap={8}
+        // gap={8}
+        spacing={4}
         sx={{
           display: "flex",
-
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        {SESSIONS.map((session) => {
+        {SESSIONS.map((session: SessionType) => {
           return (
-            <Grid key={session.id} item md={3}>
+            <Grid key={session.id} item md={4}>
               <Card>
                 <CardMedia component="img" src={session.image} />
                 <CardContent>
@@ -50,7 +66,9 @@ export const BrowseSessionPage = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button>Learn More</Button>
+                  <RouterLink to={`session/${session.id}`}>
+                    <Button>Learn More</Button>
+                  </RouterLink>
                 </CardActions>
               </Card>
             </Grid>

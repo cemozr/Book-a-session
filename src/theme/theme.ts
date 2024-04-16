@@ -33,6 +33,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           fontWeight: "bold",
+          backgroundColor: "#fcc729",
         },
       },
     },
@@ -48,9 +49,11 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FCD253",
+          minHeight: "10rem",
         },
       },
     },
+
     MuiLink: {
       styleOverrides: {
         root: {

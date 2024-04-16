@@ -10,7 +10,7 @@ import { MISSIONS } from "../../dummy-missions";
 
 export const OurMissionPage = () => {
   return (
-    <Container maxWidth={"xl"}>
+    <Container maxWidth={"lg"}>
       <Typography variant="h4" sx={{ marginTop: "3rem", marginBottom: "1rem" }}>
         Our Mission is Your Success
       </Typography>

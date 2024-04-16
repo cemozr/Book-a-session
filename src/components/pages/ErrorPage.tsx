@@ -8,7 +8,10 @@ export const ErrorPage = () => {
       <Typography variant="h2" color={"primary.dark"}>
         asdasdasd
       </Typography>
-      <Typography variant="h2" color={"secondary"}>
+      <Typography variant="h2" color={"secondary.dark"}>
+        asdasdasdsa
+      </Typography>
+      <Typography variant="h2" color={"secondary.light"}>
         asdasdasdsa
       </Typography>
     </>
