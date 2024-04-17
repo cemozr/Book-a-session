@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { SESSIONS } from "../../dummy-sessions";
-import { Button, Box, Typography, Paper } from "@mui/material";
+import { Box, Typography, Paper } from "@mui/material";
 import { type SessionType } from "../pages/BrowseSessionsPage";
+import { BookingModal } from "../UI/BookingModal";
 
 export const Session = () => {
   const { sessionId } = useParams<string>();
@@ -13,7 +14,7 @@ export const Session = () => {
     }
   );
   const currentSession: SessionType = chosenSessions[0];
-
+  console.log(typeof currentSession);
   return (
     <Box>
       <Box display={"flex"} gap={4}>
@@ -29,15 +30,7 @@ export const Session = () => {
             {currentSession.date}
           </Typography>
           <Typography marginY="1rem">{currentSession.summary}</Typography>
-          <Button
-            sx={{
-              "&:hover": {
-                backgroundColor: "#FCD253",
-              },
-            }}
-          >
-            Book Session
-          </Button>
+          <BookingModal currentSession={currentSession} />
         </Box>
       </Box>
       <Paper

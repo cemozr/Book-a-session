@@ -9,9 +9,6 @@ export const SessionPage = () => {
       <Button
         onClick={() => navigate("/browse-sessions")}
         sx={{
-          "&:hover": {
-            backgroundColor: "#FCD253",
-          },
           marginY: "1rem",
         }}
       >

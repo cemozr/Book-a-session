@@ -34,9 +34,14 @@ export const theme = createTheme({
         root: {
           fontWeight: "bold",
           backgroundColor: "#fcc729",
+          "&:hover": {
+            backgroundColor: "#FCD253",
+            color: "#232AA7",
+          },
         },
       },
     },
+
     MuiCardActions: {
       styleOverrides: {
         root: {
@@ -53,7 +58,21 @@ export const theme = createTheme({
         },
       },
     },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "#333def",
+        },
+      },
+    },
 
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: "whitesmoke",
+        },
+      },
+    },
     MuiLink: {
       styleOverrides: {
         root: {

@@ -8,6 +8,7 @@ import {
   Grid,
   Typography,
   Box,
+  Link,
 } from "@mui/material";
 import { SESSIONS } from "../../dummy-sessions";
 import { Link as RouterLink } from "react-router-dom";
@@ -20,6 +21,13 @@ export type SessionType = {
   duration: number;
   date: string;
   image: string;
+};
+
+const LinkSx = {
+  color: "#333def",
+  width: "100%",
+  height: "100%",
+  padding: ".5rem",
 };
 
 export const BrowseSessionPage = () => {
@@ -65,10 +73,23 @@ export const BrowseSessionPage = () => {
                     {session.summary}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <RouterLink to={`session/${session.id}`}>
-                    <Button>Learn More</Button>
-                  </RouterLink>
+                <CardActions sx={{ padding: "0" }}>
+                  <Button
+                    sx={{
+                      width: "100%",
+                      padding: "0",
+                      "&:hover": { fontSize: "3rem" },
+                    }}
+                  >
+                    <Link
+                      component={RouterLink}
+                      to={`session/${session.id}`}
+                      underline="none"
+                      sx={LinkSx}
+                    >
+                      Learn More
+                    </Link>
+                  </Button>
                 </CardActions>
               </Card>
             </Grid>

@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import { OurMissionPage } from "./components/pages/OurMissionPage";
 import { BrowseSessionPage } from "./components/pages/BrowseSessionsPage";
 import { UpcomingSessionsPage } from "./components/pages/UpcomingSessionsPage";
