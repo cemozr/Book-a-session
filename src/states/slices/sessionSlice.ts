@@ -28,8 +28,15 @@ const SessionsSlice = createSlice({
         state.sessions = state.sessions.concat(action.payload);
       }
     },
+    deleteSession: (state, action: PayloadAction<Session>) => {
+      const filteredSessions: Session[] = state.sessions.filter((session) => {
+        return session.id !== action.payload.id;
+      });
+
+      state.sessions = filteredSessions;
+    },
   },
 });
 
 export default SessionsSlice.reducer;
-export const { addSession } = SessionsSlice.actions;
+export const { addSession, deleteSession } = SessionsSlice.actions;

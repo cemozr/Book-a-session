@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import { addSession } from "../../states/slices/sessionSlice";
 import { getUser } from "../../states/slices/userSlice";
 import { SessionType } from "../pages/BrowseSessionsPage";
-import { type FormEvent, useState } from "react";
+import { type FormEvent } from "react";
 
 type BookSessionProps = {
   currentSession: SessionType;

@@ -4,7 +4,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import { Link as RouterLink } from "react-router-dom";
-import { Padding } from "@mui/icons-material";
 
 const LinkSx = {
   fontSize: "1.3rem",

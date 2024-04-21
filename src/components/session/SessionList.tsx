@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../states/store";
 import {
   Avatar,
@@ -11,7 +11,10 @@ import {
   Button,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { deleteSession } from "../../states/slices/sessionSlice";
 export const SessionList = () => {
+  const dispatch = useDispatch();
+
   const sessionsList = useSelector(
     (state: RootState) => state.sessionReducer.sessions
   );
@@ -62,6 +65,7 @@ export const SessionList = () => {
                     </Box>
                     <Box>
                       <Button
+                        onClick={() => dispatch(deleteSession(session))}
                         sx={{
                           backgroundColor: "primary.main",
                           "&:hover": { backgroundColor: "primary.main" },
